@@ -1,30 +1,34 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/png-transparent-health-coaching-health-fitness-and-wellness-naturally-belle-health-angle-leaf-logo-thumbnail.png';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { user } = useContext(AuthContext)
+  
+
 
 
     const menu = <>
-        <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/'>About us</Link></li>
+        <li className='font-semibold'><NavLink   to='/'>Home</NavLink></li>
+        <li className='font-semibold'><NavLink activeClassName="active-link" to='/about'>About us</NavLink></li>
+        <li className='font-semibold'><NavLink to='/blog'>Blog</NavLink></li>
+        <li className='font-semibold'><NavLink to='/contact'>Contact</NavLink></li>
         {user?.email ?
             <>
                 <li className='font-semibold'><Link to='/services'>Services</Link></li>
                 <li className='font-semibold'><button className='btn-ghost' >SignOut</button></li>
 
             </> :
-            <li className='font-semibold'><Link to='/login'>Login</Link></li>
+            <li className='font-semibold'><NavLink to='/login'>Login</NavLink></li>
         }
-         <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
-         <li className='font-semibold'><Link to='/contact'>Contact</Link></li>
+        
 
     </>
 
     return (
-        <div className="navbar  text-natural md:text-white bg-secondary ">
+        <div className="navbar rounded-lg  text-natural md:text-white bg-secondary sticky top-0 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-primary lg:hidden">
@@ -34,16 +38,14 @@ const Header = () => {
                         {menu}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl" alt=""> <img src={logo} alt="" className='rounded mr-1' width={40} /> <span className='text-white'>Health</span>  <span className='text-primary'>Coach</span> </Link>
+                <Link to='/' className="btn btn-ghost text-bold normal-case sm:text-xl md:text-4xl" alt=""> <img src={logo} alt="" className='rounded mr-1' width={40} /> <span className='text-white'>Health</span>  <span className='text-primary'>Coach</span> </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menu}
                 </ul>
             </div>
-            <div className="navbar-end hidden md:block">
-            <button className="btn btn-outline btn-primary">Make Appointment</button>
-            </div>
+           
         </div>
     );
 };
