@@ -7,14 +7,22 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const Header = () => {
     const { user } = useContext(AuthContext)
   
+    const navLinkStyle = ({isActive}) => {
+        return {
+            fontWeight: isActive? 'bold' : 'normal'
+
+        }
+    }
 
 
 
     const menu = <>
-        <li className='font-semibold'><NavLink   to='/'>Home</NavLink></li>
-        <li className='font-semibold'><NavLink activeClassName="active-link" to='/about'>About us</NavLink></li>
-        <li className='font-semibold'><NavLink to='/blog'>Blog</NavLink></li>
-        <li className='font-semibold'><NavLink to='/contact'>Contact</NavLink></li>
+        <li className='font-semibold'><NavLink style={navLinkStyle}   to='/'>Home</NavLink></li>
+        <li className='font-semibold'><NavLink to='/about'>About us</NavLink></li>
+        <li className='font-semibold'><NavLink to='/appointments'>Appointments</NavLink></li>
+        <li className='font-semibold'><NavLink to='/reviews'>Reviews</NavLink></li>
+        <li className='font-semibold'><NavLink to='/blogs'>Blogs</NavLink></li>
+        <li className='font-semibold'><NavLink to='/contact'>Contact Us</NavLink></li>
         {user?.email ?
             <>
                 <li className='font-semibold'><Link to='/services'>Services</Link></li>
