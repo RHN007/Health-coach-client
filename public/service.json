@@ -1,0 +1,50 @@
+[
+    {
+        "service_id": "01",
+        "title": "Balance Body & Mind",
+        "img": "https://i.ibb.co/ssNcLY7/25-Simple-Ways-to-Balance-Your-Mind-Body-and-Soul.jpg",
+        "price": "100.00",
+        "description": "One of the guiding principles of mind-body medicine is the interconnection of all things, including the mind, the body, and the environment in which we live. Each of us is an inseparable part of an infinite field of intelligence, and in this very moment, with every breath, we are exchanging millions of atoms with the universe."
+        
+    },
+    {
+        "service_id": "02",
+        "title": "Physical Activity",
+        "img": "https://i.ibb.co/0JkP61p/img2.jpg",
+        "price": "120.00",
+        "description": "physical activity as any bodily movement produced by skeletal muscles that requires energy expenditure. Physical activity refers to all movement including during leisure time, for transport to get to and from places, or as part of a person’s work. Both moderate- and vigorous-intensity physical activity improve health."
+        
+    },
+    {
+        "service_id": "03",
+        "title": "Fitness & Performance",
+        "img": "https://i.ibb.co/sQf7Hcg/img3.jpg",
+        "price": "80.00",
+        "description": "You can use varying levels of physical activity to enhance your health, which is the overall state of your body and mind; your fitness, which is your ability to carry out routine physical tasks without undue fatigue; and your performance, which is how well you can complete a physical task."
+        
+    },
+    {
+        "service_id": "04",
+        "title": "Exercise Program",
+        "img": "https://i.ibb.co/2Kbktdc/img4.jpg",
+        "price": "70.00",
+        "description": "A customised exercise program developed by an AUSactive registered professional is a great way to stay fit and will bring you a wide range of physical and mental benefits.Before starting with an exercise program, if you haven’t exercised for a while, use the adult pre-exercise screening tool and consult your doctor for a check-up if required."
+        
+    },
+    {
+        "service_id": "05",
+        "title": "Healthy Daily Life",
+        "img": "https://i.ibb.co/84mGptx/img5.png",
+        "price": "100.00",
+        "description": "Creating a healthy daily routine is a simple yet effective way to build consistency when it comes to your health. Not only does your daily routine impact your overall health, but it has a direct impact on your stress levels, sleep habits, and eating patterns. Everything from what you do first thing in the morning to what you do last at night plays a role in your overall health. Although it can be tempting to change everything at once, focusing on small habits and doing them on a daily basis is the best way to make a healthy daily routine, and healthy daily habits last for the long term."
+        
+    },
+    {
+        "service_id": "06",
+        "title": "Improving Health",
+        "img": "https://i.ibb.co/rF5pjVK/img6.jpg",
+        "price": "200.00",
+        "description": "Quality improvement in healthcare means a systematic approach by a healthcare organization that monitors, assesses and improves the standards of quality healthcare. The organizational chain of activities is cyclic and needs continues improvement to seek a higher level of performance. Continuous upgradation in healthcare activities can pull out healthcare organizations from inefficient traditional concepts and utilize technology/tools to perform efficiently and hence generate better quality results."
+        
+    }
+]
