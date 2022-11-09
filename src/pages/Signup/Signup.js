@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Signup = () => {
     return (
-        <div className="bg-gray-800">
+        <div className="">
             <div className="p-8 lg:w-1/2 mx-auto">
-                <div className="bg-white rounded-t-lg p-8">
+                <div className="bg-secondary rounded-t-lg p-8">
                     <p className="text-center text-sm text-gray-400 font-light">Sign up with</p>
                     <div>
                         <div className="flex items-center justify-center space-x-4 mt-3">
