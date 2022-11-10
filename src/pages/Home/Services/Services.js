@@ -10,8 +10,6 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
 
-        
-
     return (
         <div>
             <div className='text-center mb-6'>
