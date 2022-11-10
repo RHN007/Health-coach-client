@@ -10,7 +10,7 @@ const Added = () => {
     const handleAddServices = event => {
         event.preventDefault()
         const form = event.target; 
-        const name = `${form.firstName.value} ${form.lastName.value}` 
+        const name = form.name.value
         const email = user?.email || 'Unregistered'
         const phone = form.phone.value; 
         const message = form.message.value; 
@@ -44,10 +44,9 @@ const Added = () => {
         <div className='border-4 solid  p-10 rounded-lg bg-secondary'>
             <form onSubmit={handleAddServices}>
                 <h2 className="text-2xl text-center text-white font-bold">You are about to Take: {title}</h2>
-                <h4 className="text-3xl text-center font-bold text-primary">${price}</h4>
+                <h4 className="text-3xl text-center font-bold text-primary">Service Fee ${price}</h4>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mt-8 '>
-                    <input  name="firstName" type="text" placeholder="First Name" className="input input-bordered w-full" />
-                    <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered w-full " />
+                    <input  name="name" type="text" placeholder="Service Name" defaultValue={title} className="input input-bordered w-full" />
                     <input name="phone" type="text" placeholder="Your Phone" className="input input-bordered w-full " required />
                     <input name="email" type="text" placeholder="Type Email" defaultValue={user?.email} className="input input-bordered w-full " readOnly />
                    

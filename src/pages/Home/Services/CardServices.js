@@ -22,7 +22,7 @@ const CardServices = ({service}) => {
                 <div className="card-body p-5">
                     <h2 className="card-title">{title}</h2>
                     <p className='text-2xl text-primary font-semibold'>Price ${price}</p>
-                    {description.length > 200 ? <p>{description.slice(0, 250) + '......'} <Link to={`/services/${_id}`}><span className='font-bold text-sky-700'>Read More</span></Link> </p> :
+                    {description.length > 200 ? <p>{description.slice(0, 250) + '......'} <Link to={`/services/${_id}`}><span className=' btn btn-secondary font-bold '> Click Here to Read More & Give a Review </span></Link> </p> :
                         <p>{description}</p>}
                     <div className="card-actions justify-end">
                        <Link to={`/added/${_id}`}>

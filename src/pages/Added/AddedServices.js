@@ -54,7 +54,7 @@ const handleStatusUpdate = id => {
     .then(data => {console.log(data)
             if(data.modifiedCount>0){
                     // const remaining = orders.filter(odr => odr._id !== id)
-                    const approving = orders.find(odr => orders._id ===id)
+                    const approving = orders.find(odr => odr._id ===id)
                     approving.status = 'Approved'
                     const newOrders = [ approving , ...approving]
                     setOrders(newOrders)

@@ -1,11 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import ReviewCard from '../../Review/ReviewCard';
 
 const ServiceDetails = () => {
     const service = useLoaderData()
-    const {  img, price, title, description } = service
+   
+    const {_id,  img, price, title, description } = service
     return (
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 '>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img src={img} alt="Album" /></figure>
                 <div className="card-body">
@@ -13,8 +15,13 @@ const ServiceDetails = () => {
                     <p>Price : ${price}</p>
                     <p>{description}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Add A review</button>
+                    <Link to={`/reviews/${_id}`}>
+                       <button className="btn btn-primary">Add A review</button>
+                       </Link>
                     </div>
+                </div>
+                <div>
+                  
                 </div>
             </div>
         </div>
