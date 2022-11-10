@@ -8,7 +8,7 @@ const AddedServices = () => {
 
 
     useEffect(()=> {
-        fetch(`http://localhost:9000/added?email=${user?.email}`)
+        fetch(`https://health-coach-server-rhn007.vercel.app/added?email=${user?.email}`)
         .then(res => {
             if(res.status === 401 || res.status === 403){
                 return logOut()
@@ -23,7 +23,7 @@ const AddedServices = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order')
      if(proceed) {
-    fetch(`http://localhost:9000/added/${id}`, {
+    fetch(`https://health-coach-server-rhn007.vercel.app/added/${id}`, {
         method: 'DELETE',
         // headers: {
         //         authorization: `Bearer ${localStorage.getItem('genius-token')}`
@@ -42,7 +42,7 @@ const AddedServices = () => {
 }  
 
 const handleStatusUpdate = id => {
-    fetch(`http://localhost:9000/added/${id}`, {
+    fetch(`https://health-coach-server-rhn007.vercel.app/added/${id}`, {
         method: 'PATCH', 
         headers: {
             'content-type' : 'application/json',

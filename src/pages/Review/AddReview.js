@@ -10,7 +10,7 @@ const AddReview = () => {
     const [reviews , setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:9000/reviews`)
+        fetch(`https://health-coach-server-rhn007.vercel.app/reviews`)
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
@@ -19,7 +19,7 @@ const AddReview = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order')
      if(proceed) {
-    fetch(`http://localhost:9000/reviews/${id}`, {
+    fetch(`https://health-coach-server-rhn007.vercel.app/reviews/${id}`, {
         method: 'DELETE',
         // headers: {
         //         authorization: `Bearer ${localStorage.getItem('genius-token')}`
@@ -38,7 +38,7 @@ const AddReview = () => {
 }
 
 const handleStatusUpdate = id => {
-    fetch(`http://localhost:9000/added/${id}`, {
+    fetch(`https://health-coach-server-rhn007.vercel.app/added/${id}`, {
         method: 'PATCH', 
         headers: {
             'content-type' : 'application/json',

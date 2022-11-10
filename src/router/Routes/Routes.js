@@ -35,12 +35,12 @@ const router = createBrowserRouter(
             {
                 path: '/services/:id', 
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:9000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
             },
             {
                 path: '/added/:id',
                 element: <PrivateRoute><Added></Added></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:9000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
             },
             {
                 path: '/added', 
@@ -48,12 +48,12 @@ const router = createBrowserRouter(
             }, 
             {
                 path:'/reviews', 
-                element: <AddReview></AddReview>
+                element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
             },
             {
                 path: '/reviews/:id',
-                element: <Review></Review>, 
-                loader: ({params}) => fetch(`http://localhost:9000/services/${params.id}`)
+                element: <PrivateRoute><Review></Review></PrivateRoute>, 
+                loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
 
             },
 

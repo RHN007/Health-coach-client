@@ -24,7 +24,7 @@ const Added = () => {
             phone, 
             message
     }
-    fetch(`http://localhost:9000/added`,{
+    fetch(`https://health-coach-server-rhn007.vercel.app/added`,{
         method:'POST', 
         headers: {
             'content-type': 'application/json',

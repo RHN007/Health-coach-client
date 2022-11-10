@@ -5,7 +5,7 @@ const AddedRows = ({order,handleDelete,handleStatusUpdate}) => {
     const [orderService, setOrderService] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:9000/services/${service}`)
+        fetch(`https://health-coach-server-rhn007.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setOrderService(data))
     }, [service])

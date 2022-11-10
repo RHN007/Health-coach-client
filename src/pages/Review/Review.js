@@ -28,7 +28,7 @@ const Review = () => {
          
     }
 
-    fetch('http://localhost:9000/reviews', {
+    fetch('https://health-coach-server-rhn007.vercel.app/reviews', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json',
