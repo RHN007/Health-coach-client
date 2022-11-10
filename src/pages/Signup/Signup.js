@@ -14,7 +14,13 @@ const Signup = () => {
     const from = location?.state?.from?.pathname || '/'; 
 
     //React Toastify 
-    const notify = () => toast("Congratulations Your Account is created");
+    const notifySuccess = () => {toast.success("Congratulations Your Account is created",{
+            position:'top-center'
+    })};
+
+    const notifyError = () => {toast.error("You Have Enter a wrong user name or password",{
+        position:'top-center'
+})};
 
 
     const googleProvider = new GoogleAuthProvider()
@@ -53,15 +59,14 @@ const Signup = () => {
                 const user = result.user;
                 console.log(user)
                 setError('')
-                notify()
+                notifySuccess()
                 form.reset()
 
                 handleUpdateUserProfile(name)
             })
             .catch(e => {
                 console.error(e);
-                alert()
-                
+                notifyError()
                 setError(e.message)
             })
     }

@@ -14,31 +14,31 @@ const Header = () => {
     .catch(error => {})
 }
 
-    const navLinkStyle = ({isActive}) => {
-        return {
-            fontWeight: isActive? 'bold' : 'normal'
+    // const navLinkStyle = ({isActive}) => {
+    //     return {
+    //         fontWeight: isActive? 'bold' : 'normal'
 
-        }
-    }
+    //     }
+    // }
 
 
 
     const menu = <>
-        <li className='font-semibold'><NavLink style={navLinkStyle}   to='/'>Home</NavLink></li>
+        <li className='font-semibold'><NavLink   to='/'>Home</NavLink></li>
         <li className='font-semibold'><NavLink to='/about'>About us</NavLink></li>
-        <li className='font-semibold'><Link to='/services'>Services</Link></li>
-        
-        <li className='font-semibold'><NavLink to='/reviews'>Reviews</NavLink></li>
+        <li className='font-semibold'><Link to='/services'>Services</Link></li>  
         <li className='font-semibold'><NavLink to='/blogs'>Blogs</NavLink></li>
         <li className='font-semibold'><NavLink to='/contact'>Contact Us</NavLink></li>
         <li className='font-semibold'>< >
-        {user?.email ?
+        {user?.uid ?
             <>  
               <li>   {user?.photoURL ? 
-              <img className='rounded-full h-10' src={user?.photoURL} alt="userImage" />
+              <img className='h-12'  src={user?.photoURL} alt="userImage" />
               : <FaUser></FaUser>  }</li>
                 <span ><p>{user?.displayName}</p></span>
-                <li className='font-semibold'><button className='btn-ghost' onClick={handleSignOut} >SignOut</button></li>
+              <li className='font-semibold'><NavLink to='/reviews'>My Reviews</NavLink></li>
+              <li className='font-semibold'><NavLink to='/reviews'>Added Services</NavLink></li>
+                <NavLink className='font-semibold'><button className='btn-ghost' onClick={handleSignOut} >SignOut</button></NavLink>
 
             </> :
             <li className='font-semibold'><NavLink to='/login'>Login</NavLink></li>

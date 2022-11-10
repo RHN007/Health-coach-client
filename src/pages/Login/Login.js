@@ -12,6 +12,12 @@ const Login = () => {
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'; 
 
+    const notifyError = () => {toast.error(error,{
+        position:'top-center'
+})};
+
+
+
     //google & github Login System
     const googleProvider = new GoogleAuthProvider()
     const gitHubProvider = new GithubAuthProvider()
@@ -58,6 +64,7 @@ const Login = () => {
         })
         .catch(err => {
             console.log(error)
+            notifyError()
             setError(err.message)
         })
     }
@@ -179,7 +186,7 @@ const Login = () => {
             </form>
             <div>
             <p className='text-center text-2xl text-red-600'>{error}</p>
-            <ToastContainer />
+            
             </div>
           
            <div className='mt-4'>
@@ -187,6 +194,7 @@ const Login = () => {
            </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     );
 };
