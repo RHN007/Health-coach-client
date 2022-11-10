@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-// import { Link } from 'react-router-dom';
+
 
 const CardServices = ({service}) => {
     const {_id,img, price, title, description} = service
