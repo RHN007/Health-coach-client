@@ -9,6 +9,7 @@ import ServiceDetails from "../../pages/Home/Services/ServiceDetails";
 
 import Login from "../../pages/Login/Login";
 import Signup from "../../pages/Signup/Signup";
+import PrivateRoute from "../PrivateRoutes/PrivateRoutes";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter(
             },
             {
                 path: '/services/:id', 
-                element: <ServiceDetails></ServiceDetails>,
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
             },
             {

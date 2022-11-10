@@ -1,26 +1,28 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
 
-export const AuthContext = createContext(); 
+export const AuthContext = createContext();
 const auth = getAuth(app)
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
-
+    if(loading) {
+         <h1 className='text-5xl'>Loading...</h1>
+    }
 
     const providerLogin = (provider) => {
         return signInWithPopup(auth, provider)
     }
 
     const createUser = (email, password) => {
-        setLoading(true); 
-        return createUserWithEmailAndPassword(auth, email, password); 
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
     const logIn = (email, password) => {
-        setLoading(true); 
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOut = () => {
@@ -33,29 +35,29 @@ const AuthProvider = ({children}) => {
 
 
 
-useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        setUser(currentUser)
-        setLoading(false)
-    })
-    return () =>  {
-        return unsubscribe
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
+            setLoading(false)
+        })
+        return () => {
+            return unsubscribe
+        }
+    }, [])
+
+    const authInfo = {
+        user,
+        loading,
+        createUser,
+        logIn,
+        logOut,
+        updateUserProfile,
+        providerLogin
+
     }
-}, [])
-
-const authInfo = {
-    user, 
-    loading, 
-    createUser,
-    logIn,
-    logOut,
-    updateUserProfile,
-    providerLogin
-
-}
 
     return (
-        <AuthContext.Provider value = {authInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
         </AuthContext.Provider>
     );
