@@ -34,9 +34,9 @@ const Header = () => {
         <li className='font-semibold'>< >
         {user?.email ?
             <>  
-                 {user?.photoURL ? 
-              <img style={{height: '40px'}} roundedCircle src={user?.photoURL} alt="userImage" />
-              : <FaUser></FaUser>  }
+              <li>   {user?.photoURL ? 
+              <img className='rounded-full h-10' src={user?.photoURL} alt="userImage" />
+              : <FaUser></FaUser>  }</li>
                 <span ><p>{user?.displayName}</p></span>
                 <li className='font-semibold'><button className='btn-ghost' onClick={handleSignOut} >SignOut</button></li>
 

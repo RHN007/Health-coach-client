@@ -49,7 +49,8 @@ const authInfo = {
     createUser,
     logIn,
     logOut,
-    updateUserProfile
+    updateUserProfile,
+    providerLogin
 
 }
 
