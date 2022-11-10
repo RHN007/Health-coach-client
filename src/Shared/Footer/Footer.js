@@ -3,7 +3,7 @@ import logo from '../../assets/logo/png-transparent-health-coaching-health-fitne
 
 const Footer = () => {
     return (
-        <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl bg-secondary md:px-24 lg:px-8 ">
+        <div className="px-4 mt-5 pt-8 rounded-2xl mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl bg-secondary md:px-24 lg:px-8 ">
             <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="sm:col-span-2">
                     <a
