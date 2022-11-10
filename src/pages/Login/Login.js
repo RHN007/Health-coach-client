@@ -1,7 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const [error, setError] = useState(''); 
+    const {user,logIn} = useContext(AuthContext); 
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+    
+    //React Toastify 
+    const notify = () => toast("You Have Successfully Login");
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value; 
+        const password = form.password.value ; 
+        logIn(email,password)
+        .then(result => {
+            const user = result.user; 
+            console.log(user)
+           notify()
+            form.reset() 
+            setError('')
+            navigate(from , {replace: true})
+        })
+        .catch(err => {
+            console.log(error)
+            setError(err.message)
+        })
+    }
+
     return (
         <div className="">
         <div className="p-8 lg:w-1/2 mx-auto">
@@ -58,10 +90,11 @@ const Login = () => {
             <p className="text-center text-sm text-gray-500 font-light">
               Or sign in with credentials
             </p>
-            <form className="mt-6">
+            <form onSubmit= {handleSubmit} className="mt-6">
               <div className="relative">
                 <input
                   className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
+                  name='email'
                   id="username"
                   type="text"
                   placeholder="Email"
@@ -86,6 +119,7 @@ const Login = () => {
                 <input
                   className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                   id="username"
+                  name='password'
                   type="text"
                   placeholder="Password"
                 />
@@ -104,16 +138,21 @@ const Login = () => {
               </div>
               <div className="mt-4 flex items-center text-gray-500">
                 <input type="checkbox" id="remember" name="remember" className="mr-3" />
-                <label for="remember">Remember me</label>
+                <label htmlFor="remember">Remember me</label>
               </div>
               <div className="flex items-center justify-center mt-8">
-                <button
+                <input
                   className="text-white py-2 px-4 uppercase rounded bg-primary hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
-                >
-                  Sign in
-                </button>
+              type='submit' value='sing in' />
+               
+               
               </div>
             </form>
+            <div>
+            <ToastContainer />
+            <p className='text-center text-2xl text-red-600'>{error}</p>
+            </div>
+          
            <div className='mt-4'>
            <p className='text-center'>New to this site ? Please Register <Link to='/signup'> <span className='text-primary'>Register</span> </Link> </p>
            </div>
