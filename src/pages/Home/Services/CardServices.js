@@ -24,11 +24,11 @@ const CardServices = ({service}) => {
                     <p className='text-2xl text-primary font-semibold'>Price ${price}</p>
                     {description.length > 200 ? <p>{description.slice(0, 250) + '......'} <Link to={`/services/${_id}`}><span className='font-bold text-sky-700'>Read More</span></Link> </p> :
                         <p>{description}</p>}
-                    {/* <div className="card-actions justify-end">
-                       <Link to={`/checkout/${_id}`}>
-                       <button className="btn btn-primary">Checkout</button>
+                    <div className="card-actions justify-end">
+                       <Link to={`/added/${_id}`}>
+                       <button className="btn btn-primary">add</button>
                        </Link>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             

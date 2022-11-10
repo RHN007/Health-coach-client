@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import AboutUs from "../../pages/AboutUs/AboutUs";
+import Added from "../../pages/Added/Added";
+import AddedServices from "../../pages/Added/AddedServices";
 import Blogs from "../../pages/Blogs/Blogs";
 import Contact from "../../pages/Contact/Contact";
 import Home from "../../pages/Home/Home";
@@ -31,8 +33,18 @@ const router = createBrowserRouter(
             {
                 path: '/services/:id', 
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:9000/services/${params.id}`)
             },
+            {
+                path: '/added/:id',
+                element: <PrivateRoute><Added></Added></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:9000/services/${params.id}`)
+            },
+            {
+                path: '/added', 
+                element:<PrivateRoute><AddedServices></AddedServices></PrivateRoute>
+            }, 
+
             {
                 path:'/contact', 
                 element: <Contact></Contact>

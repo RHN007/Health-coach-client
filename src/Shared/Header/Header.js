@@ -14,13 +14,7 @@ const Header = () => {
     .catch(error => {})
 }
 
-    // const navLinkStyle = ({isActive}) => {
-    //     return {
-    //         fontWeight: isActive? 'bold' : 'normal'
-
-    //     }
-    // }
-
+   
 
 
     const menu = <>
@@ -37,7 +31,7 @@ const Header = () => {
               : <FaUser></FaUser>  }</li>
                 <span ><p>{user?.displayName}</p></span>
               <li className='font-semibold'><NavLink to='/reviews'>My Reviews</NavLink></li>
-              <li className='font-semibold'><NavLink to='/reviews'>Added Services</NavLink></li>
+              <li className='font-semibold'><NavLink to='/added'>Added Services</NavLink></li>
                 <NavLink className='font-semibold'><button className='btn-ghost' onClick={handleSignOut} >SignOut</button></NavLink>
 
             </> :

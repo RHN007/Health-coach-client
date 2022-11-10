@@ -9,6 +9,7 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
+    
     if(loading) {
          <h1 className='text-5xl'>Loading...</h1>
     }
