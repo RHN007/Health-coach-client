@@ -9,13 +9,8 @@ const AddedServices = () => {
 
     useEffect(()=> {
         fetch(`https://health-coach-server-rhn007.vercel.app/added?email=${user?.email}`)
-        .then(res => {
-            if(res.status === 401 || res.status === 403){
-                return logOut()
-            }
-            return res.json()})
-            .then(data => {
-                setOrders(data)
+        .then(res => {res.json()})
+            .then(data => {setOrders(data)
                 console.log('received', data)})
 
     },[user?.email])

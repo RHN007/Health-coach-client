@@ -44,7 +44,7 @@ const router = createBrowserRouter(
             },
             {
                 path: '/added', 
-                element:<PrivateRoute><AddedServices></AddedServices></PrivateRoute>
+                element:<AddedServices></AddedServices>
             }, 
             {
                 path:'/reviews', 

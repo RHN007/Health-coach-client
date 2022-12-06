@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-const ReviewCard = ({review,handleDelete,handleStatusUpdate}) => {
+const ReviewCard = ({review,handleDelete}) => {
     
    const {_id,email, message, rating, customer} = review
-   console.log(review)
+
  
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
