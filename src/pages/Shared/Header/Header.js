@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../assets/logo/png-transparent-health-coaching-health-fitness-and-wellness-naturally-belle-health-angle-leaf-logo-thumbnail.png';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import logo from '../../../assets/logo/png-transparent-health-coaching-health-fitness-and-wellness-naturally-belle-health-angle-leaf-logo-thumbnail.png';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+
 
 const Header = () => {
     const { user,logOut } = useContext(AuthContext)

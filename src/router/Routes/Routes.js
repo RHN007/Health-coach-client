@@ -34,7 +34,7 @@ const router = createBrowserRouter(
             },
             {
                 path: '/services/:id', 
-                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+                element: <ServiceDetails></ServiceDetails>,
                 loader: ({params}) => fetch(`https://health-coach-server-rhn007.vercel.app/services/${params.id}`)
             },
             {
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
             },
             {
                 path: '/added', 
-                element:<AddedServices></AddedServices>
+                element: <PrivateRoute><AddedServices></AddedServices></PrivateRoute>
             }, 
             {
                 path:'/reviews', 

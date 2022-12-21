@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo/png-transparent-health-coaching-health-fitness-and-wellness-naturally-belle-health-angle-leaf-logo-thumbnail.png'
+import logo from '../../../assets/logo/png-transparent-health-coaching-health-fitness-and-wellness-naturally-belle-health-angle-leaf-logo-thumbnail.png'
 
 const Footer = () => {
     return (
